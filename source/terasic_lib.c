@@ -1,5 +1,5 @@
-#include "terasic_os_includes.h"
-#include "terasic_lib.h"
+#include "../headers/terasic_os_includes.h"
+#include "../headers/terasic_lib.h"
 
 
 // link: -lrt

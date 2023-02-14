@@ -31,8 +31,8 @@
 
 
 
-#include "LCD_Lib.h"
-#include "LCD_Driver.h"
+#include "../headers/LCD_Lib.h"
+#include "../headers/LCD_Driver.h"
 
 
 void LCD_Init(void){

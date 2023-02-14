@@ -1,4 +1,4 @@
-#include "font.h"
+#include "../headers/font.h"
 
 static
 FONT_BITMAP font_table[] =

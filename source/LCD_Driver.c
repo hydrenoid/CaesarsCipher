@@ -29,8 +29,8 @@
 //
 // ============================================================================
 
-#include "LCD_Hw.h"
-#include "LCD_Driver.h"
+#include "../headers/LCD_Hw.h"
+#include "../headers/LCD_Driver.h"
 
 
 

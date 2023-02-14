@@ -7,12 +7,9 @@
 
 // extern because it is used in another module
 extern void initializeHardware();
-extern void lcdDisplayText(char text[]);
-extern void ledDisplay(int num);
-extern void lcdDisplayUpdate(Snake *snake, Position food);
-extern int checkButton1();
-extern int checkButton2();
-extern void cleanupHardware();
+extern void setPins(int *binary, int size);
+extern int* readPins(int *binary);
+extern void setDecode();
 
 #define UNTITLED2_HARDWARE_H
 

@@ -37,7 +37,7 @@
 #include <fcntl.h>
 #include <sys/mman.h>
 #include <stdarg.h> 
-#include "LCD_Hw.h"
+#include "../headers/LCD_Hw.h"
 #include "hwlib.h"
 #include "socal/socal.h"
 #include "socal/hps.h"

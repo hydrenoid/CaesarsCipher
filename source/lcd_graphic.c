@@ -37,9 +37,9 @@
 #include <stdlib.h>
 #include <string.h>
 #include "hwlib.h"
-#include "lcd_graphic.h"
-#include "LCD_Lib.h"
-#include "font.h"
+#include "../headers/lcd_graphic.h"
+#include "../headers/LCD_Lib.h"
+#include "../headers/font.h"
 
 //////////////////////////////////////////////
 // lowest level API
