@@ -7,9 +7,7 @@
 #include <time.h>
 #include "../headers/structures.h"
 #include "../headers/terasic_os_includes.h"
-#include "../headers/LCD_Lib.h"
-#include "../headers/lcd_graphic.h"
-#include "../headers/font.h"
+
 
 #include <unistd.h>
 #include <fcntl.h>
@@ -33,16 +31,6 @@
 #define TRUE ( 1 )
 #define FALSE ( 0 )
 
-// variables for LCD display
-void *virtual_base_LCD;
-int fd_LCD;
-LCD_CANVAS LcdCanvas;
-
-// variables for user button
-void *virtual_base_USER_BUTTON;
-int fd_USER_BUTTON;
-uint32_t scan_input;
-volatile int *KEY_ptr;
 
 void * virtual_base;
 
@@ -72,7 +60,7 @@ void initializeHardware()
 void setPins(int *binary, int size)
 {
     int i, j;
-    for (i = 0, j = 5; j >= 0; j--, i++)
+    for (i = 0, j = 7; j >= 0; j--, i++)
     {
         if (i < size)
         {
@@ -102,7 +90,7 @@ void setDecode()
 int* readPins(int* binary, int size)
 {
     int i, j;
-    for (i = 0, j = 5; j >= 0; j--, i++)
+    for (i = 0, j = 7; j >= 0; j--, i++)
     {
         if (i < size)
         {
@@ -117,14 +105,3 @@ int* readPins(int* binary, int size)
 
     return binary;
 }
-
-
-
-
-
-
-
-
-
-
-

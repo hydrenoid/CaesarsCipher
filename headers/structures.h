@@ -2,29 +2,30 @@
 // Created by Jonathon Moore on 11/1/2022.
 //
 
-#ifndef SWE_350MILESTONE2_STRUCTURES_H
+#ifndef SWE_450MILESTONE2_STRUCTURES_H
 
-/*
- * Structure that defines each body part of the snake with an x and y pixel value
- */
-typedef struct {
-    int x;
-    int y;
-} Position;
 
-/*
- * Structure that defines the whole snake, from list of body parts to size and index of head
- */
-typedef struct {
-    Position *parts;
-    size_t used;
-    size_t size;
-    size_t score;
-    size_t indexOfHead;
-    int direction[2];
+// input bits
+#define PIN_a0 0x01 // 0b00000001
+#define PIN_a1 0x02 // 0b00000010
+#define PIN_a2 0x04 // 0b00000100
+#define PIN_a3 0x08 // 0b00001000
+#define PIN_a4 0x16 // 0b00010000
+#define PIN_a5 0x32 // 0b00100000
+#define PIN_a6 0x64 // 0b01000000
+#define PIN_a7 0x128// 0b10000000
 
-} Snake;
+// output bits
+#define PIN_b0 0x01 // 0b00000001
+#define PIN_b1 0x02 // 0b00000010
+#define PIN_b2 0x04 // 0b00000100
+#define PIN_b3 0x08 // 0b00001000
+#define PIN_b4 0x16 // 0b00010000
+#define PIN_b5 0x32 // 0b00100000
+#define PIN_b6 0x64 // 0b01000000
+#define PIN_b7 0x128// 0b10000000
 
-#define SWE_350MILESTONE2_STRUCTURES_H
 
-#endif //SWE_350MILESTONE2_STRUCTURES_H
+#define SWE_450MILESTONE2_STRUCTURES_H
+
+#endif //SWE_450MILESTONE2_STRUCTURES_H

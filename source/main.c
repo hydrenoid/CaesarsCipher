@@ -3,14 +3,12 @@
 #include <math.h>
 #include <time.h>
 #include <string.h>
+#include <ctype.h>
+
 #include "../headers/hardware.h"
 #include "../headers/structures.h"
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <math.h>
-#include <time.h>
-#include <string.h>
+
 
 /**
  * Takes in a decimal number and returns a pointer to an int array containing
@@ -50,54 +48,16 @@ int binaryToDecimal(int *binary, int size) {
     return decimal;
 }
 
-/**
- * Takes in a char and returns the value of the char in int
- * @param input
- * @return the int value of the given char
- */
-int getCharValue(char input)
-{
-    char character_map[] = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n',
-                            'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', ' ', '<',
-                            '>', '!', '#', '?', ':', '-', '_', '[', ']', '{', '}', '*', '+', '=',
-                            '&'};
-    int i;
-    for(i = 0; i < 42; i++)
-    {
-        if(input == character_map[i])
-        {
-            return i;
-        }
-    }
-    return 0;
-}
 
-/**
- * Takes in an int and returns a char with the correct mapped value
- * @param value
- * @return the mapped char
- */
-char getChar(int value)
-{
-    char character_map[] = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n',
-                            'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', ' ', '<',
-                            '>', '!', '#', '?', ':', '-', '_', '[', ']', '{', '}', '*', '+', '=',
-                            '&'};
-
-    return character_map[value];
-}
-
-int main()
-{
+int main() {
     // initialize connection to GPIO pins
-    initializeHardware();
+    //initializeHardware();
 
     // prompt user whether they would like to encode or decode message
     int toDecode;
     printf("Would you like to encode or decode a message? (0, 1)");
     scanf("%d", &toDecode);
-    if (toDecode == 1)
-    {
+    if (toDecode == 1) {
         setDecode();
     }
 
@@ -123,29 +83,21 @@ int main()
     int beginning_binary[100];
     int i;
     int length = strlen(message);
-    char input;
     char output;
     int ascii_value;
     int *result;
     int size;
-    for (i = 0; i < length; i++)
-    {
-        // take the first character of string out
-        input = message[i];
-
+    for (i = 0; i < length; i++) {
         // map the character to its ascii value
+        ascii_value = toupper(message[i]);
 
-        ascii_value = getCharValue(message[i]);
         printf("\nvalue of %c = %d: ", message[i], ascii_value);
 
         // set the input pins to the numbers value in binary
         result = decimalToBinary(ascii_value, beginning_binary);
-        if (ascii_value > 0)
-        {
+        if (ascii_value > 0) {
             size = log2(ascii_value) + 1;
-        }
-        else
-        {
+        } else {
             size = 1;
         }
 
@@ -167,13 +119,10 @@ int main()
         }
 
         // map the number to its corresponding character
-        if(toDecode == 1)
-        {
-            output = getChar(ascii_value - key);
-        }
-        else
-        {
-            output = getChar(ascii_value + key);
+        if (toDecode == 1) {
+            output = ascii_value - key;
+        } else {
+            output = ascii_value + key;
         }
 
         printf("\nvalue is %d", ascii_value);
