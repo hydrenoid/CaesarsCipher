@@ -12,3 +12,6 @@ The Caesars Cipher algorithm is very simple, it takes in a phrase and encodes it
 
 # Pin Assignments:
 <img width="363" alt="image" src="https://user-images.githubusercontent.com/82002017/226689203-a2a0e0ed-0d55-4e52-816b-98ef6f11df1c.png">
+
+# Resources:
+DE10-Standard Intel Board
