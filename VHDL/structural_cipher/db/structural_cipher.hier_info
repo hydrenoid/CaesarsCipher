@@ -1,0 +1,137 @@
+|structural_cipher
+a[0] => full_adder:FA0.x
+a[1] => full_adder:FA1.x
+a[2] => full_adder:FA2.x
+a[3] => full_adder:FA3.x
+a[4] => full_adder:FA4.x
+a[5] => full_adder:FA5.x
+a[6] => full_adder:FA6.x
+a[7] => full_adder:FA7.x
+b[0] => comb.IN0
+b[1] => comb.IN0
+b[2] => comb.IN0
+b[3] => comb.IN0
+d => comb.IN1
+d => comb.IN1
+d => comb.IN1
+d => comb.IN1
+d => full_adder:FA0.cin
+d => full_adder:FA4.y
+d => full_adder:FA5.y
+d => full_adder:FA6.y
+d => full_adder:FA7.y
+sum[0] <= full_adder:FA0.sum
+sum[1] <= full_adder:FA1.sum
+sum[2] <= full_adder:FA2.sum
+sum[3] <= full_adder:FA3.sum
+sum[4] <= full_adder:FA4.sum
+sum[5] <= full_adder:FA5.sum
+sum[6] <= full_adder:FA6.sum
+sum[7] <= full_adder:FA7.sum
+cout <= full_adder:FA4.cout
+
+
+|structural_cipher|full_adder:FA0
+x => sum.IN0
+x => cout.IN1
+y => sum.IN1
+y => cout.IN0
+y => cout.IN0
+cin => sum.IN1
+cin => cout.IN1
+cin => cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|structural_cipher|full_adder:FA1
+x => sum.IN0
+x => cout.IN1
+y => sum.IN1
+y => cout.IN0
+y => cout.IN0
+cin => sum.IN1
+cin => cout.IN1
+cin => cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|structural_cipher|full_adder:FA2
+x => sum.IN0
+x => cout.IN1
+y => sum.IN1
+y => cout.IN0
+y => cout.IN0
+cin => sum.IN1
+cin => cout.IN1
+cin => cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|structural_cipher|full_adder:FA3
+x => sum.IN0
+x => cout.IN1
+y => sum.IN1
+y => cout.IN0
+y => cout.IN0
+cin => sum.IN1
+cin => cout.IN1
+cin => cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|structural_cipher|full_adder:FA4
+x => sum.IN0
+x => cout.IN1
+y => sum.IN1
+y => cout.IN0
+y => cout.IN0
+cin => sum.IN1
+cin => cout.IN1
+cin => cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|structural_cipher|full_adder:FA5
+x => sum.IN0
+x => cout.IN1
+y => sum.IN1
+y => cout.IN0
+y => cout.IN0
+cin => sum.IN1
+cin => cout.IN1
+cin => cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|structural_cipher|full_adder:FA6
+x => sum.IN0
+x => cout.IN1
+y => sum.IN1
+y => cout.IN0
+y => cout.IN0
+cin => sum.IN1
+cin => cout.IN1
+cin => cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|structural_cipher|full_adder:FA7
+x => sum.IN0
+x => cout.IN1
+y => sum.IN1
+y => cout.IN0
+y => cout.IN0
+cin => sum.IN1
+cin => cout.IN1
+cin => cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+

@@ -1,0 +1,22 @@
+module parallel_addsub(a, b, cin, sub, cout, addsub);
+  input [3:0] a, b;
+  input cin;
+  output [3:0] sub;
+  output cout;
+  input addsub;
+
+  wire [3:0] sum;
+  wire [3:0] carry;
+
+  assign {carry[0], sum[0]} = a[0] + b[0] + cin;
+  assign {carry[1], sum[1]} = a[1] + b[1] + carry[0];
+  assign {carry[2], sum[2]} = a[2] + b[2] + carry[1];
+  assign {cout, sum[3]} = a[3] + b[3] + carry[2];
+
+  assign {carry[0], sub[0]} = a[0] + (~b[0] + cin);
+  assign {carry[1], sub[1]} = a[1] + (~b[1] + carry[0]);
+  assign {carry[2], sub[2]} = a[2] + (~b[2] + carry[1]);
+  assign {cout, sub[3]} = a[3] + (~b[3] + carry[2]);
+
+  assign {sub, cout} = addsub ? {sub, cout} : {sum, cout};
+endmodule
