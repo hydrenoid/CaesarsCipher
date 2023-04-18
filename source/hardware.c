@@ -46,10 +46,36 @@ void *LW_virtual;
 
 /**
  * initialize all hardware and pointers to be used
+ * @return Success in int form
  */
-void initializeHardware()
+int initializeHardware()
 {
 
+    if((f_d = open("/dev/mem", (O_RDWR | O_SYNC))) == -1){
+        printf("ERROR: Could not Open...");
+        return (-1);
+    }
+
+    virtBase = mmap(NULL, LW_BRIDGE_SPAN, (PROT_READ | PROT_WRITE), MAP_SHARED, f_d, LW_BRIDGE_BASE);
+    if(virtBase == MAP_FAILED){
+        printf("ERROR: mmap() failed...");
+        close(f_d);
+        return (NULL);
+    }
+}
+
+/**
+ * Close the hardware connection to the board pins
+ * @return an int representing successful closure
+ */
+int closeHardware()
+{
+    if(munmap (virtBase, LW_BRIDGE_SPAN) != 0){
+        printf("ERROR: munmap failed...");
+        return(-1);
+    }
+    close(f_d);
+    return 0;
 }
 
 /**

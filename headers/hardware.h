@@ -6,9 +6,10 @@
 
 
 // extern because it is used in another module
-extern void initializeHardware();
+extern int initializeHardware();
+extern int closeHardware();
 extern void setPins(int *binary, int size);
-extern int* readPins(int *binary);
+extern int* readPins(int *binary, int size);
 extern void setDecode();
 
 #define UNTITLED2_HARDWARE_H
