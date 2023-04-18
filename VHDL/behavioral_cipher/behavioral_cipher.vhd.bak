@@ -1,0 +1,19 @@
+entity behavioral_cipher is
+  port (
+    a, b : in std_logic_vector(3 downto 0);
+    addsub : in std_logic;
+    sub : out std_logic_vector(3 downto 0)
+  );
+end entity behavioral_cipher;
+
+architecture behavioral of behavioral_cipher is
+begin
+  process(a, b, addsub)
+  begin
+    if addsub = '1' then
+      sub <= std_logic_vector(unsigned(a) - unsigned(b));
+    else
+      sub <= std_logic_vector(unsigned(a) + unsigned(b));
+    end if;
+  end process;
+end architecture behavioral;

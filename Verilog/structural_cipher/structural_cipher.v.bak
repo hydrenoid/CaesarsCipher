@@ -1,0 +1,28 @@
+module full_adder (input x, y, cin, output sum, cout);
+
+	initial begin
+		cout = 0;
+	end
+	
+	always begin
+		sum = (x or y) xor cin;
+		cout = (x and (y or cin)) or (cin and y);
+	end
+endmodule
+
+module structural_cipher(input reg[7:0] a, reg[3:0] b, d, output reg[7:0] sum, cout);
+
+	initial begin
+		sum = 0;
+		cout = 0;
+	end
+	
+	always begin
+		reg c1, c2, c3, c4, c5, c6, c7, c8;
+		
+		c1 = full_adder(a(0), d xor b(0), d, sum(0), c1);
+		
+		cout = c1;
+		
+	end
+endmodule
