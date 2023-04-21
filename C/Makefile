@@ -1,5 +1,5 @@
 #
-TARGET = snake_game
+TARGET = caesars_cipher
 ALT_DEVICE_FAMILY ?= soc_cv_av
 SOCEDS_ROOT ?= $(SOCEDS_DEST_ROOT)
 HWLIBS_ROOT = $(SOCEDS_ROOT)/ip/altera/hps/altera_hps/hwlib
@@ -13,7 +13,7 @@ ARCH= arm
 build: $(TARGET)
 
 
-$(TARGET): output/main.o  ../output/hardware.o
+$(TARGET): main.o  hardware.o
 	$(CC) $(LDFLAGS)   $^ -o $@   -lrt -lm
 %.o : %.c
 	$(CC) $(CFLAGS) -c $< -o $@
