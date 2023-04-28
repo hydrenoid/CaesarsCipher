@@ -1,1 +1,1 @@
-CMakeLists.txt not found in C:\Users\Jonathon Moore\CLionProjects\CaesarsCipher\C Select CMakeLists.txt
+CMakeLists.txt not found in C:\Users\Jonathon Moore\Desktop\CaesarsCipher\C Select CMakeLists.txt
